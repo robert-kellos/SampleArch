@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SampleArch.Model</RootNamespace>
     <AssemblyName>SampleArch.Model</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
@@ -84,6 +84,14 @@
     <Compile Include="Migrations\201603011822447_BNC1.Designer.cs">
       <DependentUpon>201603011822447_BNC1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201603012113275_BNC2.cs" />
+    <Compile Include="Migrations\201603012113275_BNC2.Designer.cs">
+      <DependentUpon>201603012113275_BNC2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603012123543_BNC3.cs" />
+    <Compile Include="Migrations\201603012123543_BNC3.Designer.cs">
+      <DependentUpon>201603012123543_BNC3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sample\Country.cs" />
     <Compile Include="BNC\DecoderModel.cs" />
     <Compile Include="BNC\Location.cs" />
@@ -121,6 +129,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201603011822447_BNC1.resx">
       <DependentUpon>201603011822447_BNC1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603012113275_BNC2.resx">
+      <DependentUpon>201603012113275_BNC2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603012123543_BNC3.resx">
+      <DependentUpon>201603012123543_BNC3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

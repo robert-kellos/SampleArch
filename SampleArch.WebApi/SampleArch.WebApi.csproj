@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SampleArch.WebApi</RootNamespace>
     <AssemblyName>SampleArch.WebApi</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -635,6 +635,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SampleArch.FluentValidation\SampleArch.Validation.csproj">
+      <Project>{14800be7-fd2c-4001-88ba-8c70479988bc}</Project>
+      <Name>SampleArch.Validation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SampleArch.Logging\SampleArch.Logging.csproj">
       <Project>{64e61db6-8cd3-4470-b116-92c7c9ff1cc3}</Project>
       <Name>SampleArch.Logging</Name>

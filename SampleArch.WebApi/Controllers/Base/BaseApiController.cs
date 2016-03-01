@@ -59,7 +59,7 @@ namespace SampleArch.WebApi.Controllers.Base
         /// IEnumerable{T}
         /// </returns>
         [ResponseType(typeof(IEnumerable))]
-        public IEnumerable<T> GetAll()
+        public virtual IEnumerable<T> GetAll()
         {
             return _service.GetAll();
         }
@@ -73,7 +73,7 @@ namespace SampleArch.WebApi.Controllers.Base
         /// {T}
         /// </returns>
         [ResponseType(typeof(IHttpActionResult))]
-        public async Task<IHttpActionResult> Get(int id)
+        public virtual async Task<IHttpActionResult> Get(int id)
         {
             var entity = await _service.GetByIdAsync(id, _cancellationToken);
 
@@ -93,7 +93,7 @@ namespace SampleArch.WebApi.Controllers.Base
         /// {T}
         /// </returns>
         [ResponseType(typeof(IHttpActionResult))]
-        public async Task<IHttpActionResult> Put(int id, T entity)
+        public virtual async Task<IHttpActionResult> Put(int id, T entity)
         {
             if (!ModelState.IsValid)
             {
@@ -136,7 +136,7 @@ namespace SampleArch.WebApi.Controllers.Base
         /// {T}
         /// </returns>
         [ResponseType(typeof(IHttpActionResult))]
-        public async Task<IHttpActionResult> Post(T entity)
+        public virtual async Task<IHttpActionResult> Post(T entity)
         {
             if (!ModelState.IsValid)
             {
@@ -159,7 +159,7 @@ namespace SampleArch.WebApi.Controllers.Base
         /// {T}
         /// </returns>
         [ResponseType(typeof(IHttpActionResult))]
-        public async Task<IHttpActionResult> Delete(int id)
+        public virtual async Task<IHttpActionResult> Delete(int id)
         {
             var entity = await _service.GetByIdAsync(id, _cancellationToken).ConfigureAwait(true); ;
             if (entity == null)

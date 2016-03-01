@@ -2,6 +2,7 @@
 using FluentValidation;
 using FluentValidation.Internal;
 using SampleArch.Model;
+using SampleArch.Logging;
 
 namespace SampleArch.Validation.Validators
 {
@@ -10,7 +11,7 @@ namespace SampleArch.Validation.Validators
         private static CountryValidator _instance;
         public static CountryValidator Instance => _instance ?? (_instance = new CountryValidator());
 
-        protected CountryValidator()
+        public CountryValidator()
         {
             Task.Factory.StartNew(() => {
                 RuleSet("Country", () =>
@@ -26,6 +27,25 @@ namespace SampleArch.Validation.Validators
                     RuleFor(x => x.Persons).SetCollectionValidator(x => new PersonValidator());
                 });
             }).ConfigureAwait(true);
+        }
+
+        public string IsValid(Country entity)
+        {
+            var result = string.Empty;
+
+            var valResults = Validate(entity);
+
+            var validationSucceeded = valResults.IsValid;
+            var failures = valResults.Errors;
+
+            if (!validationSucceeded)
+            {
+                result = string.Join(", ", failures);
+
+                Audit.Log.Error($"validation failed: '{result}'");
+            }
+
+            return result;
         }
 
         public static string Test()
