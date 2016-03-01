@@ -1,13 +1,11 @@
 ﻿using SampleArch.Model.Common;
 using SampleArch.Service.Common;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
 
@@ -74,7 +72,7 @@ namespace SampleArch.WebApi.Controllers.Base
         /// <returns>
         /// {T}
         /// </returns>
-        [ResponseType(typeof(Task<IHttpActionResult>))]
+        [ResponseType(typeof(IHttpActionResult))]
         public async Task<IHttpActionResult> Get(int id)
         {
             var entity = await _service.GetByIdAsync(id, _cancellationToken);
@@ -94,7 +92,7 @@ namespace SampleArch.WebApi.Controllers.Base
         /// <returns>
         /// {T}
         /// </returns>
-        [ResponseType(typeof(Task<IHttpActionResult>))]
+        [ResponseType(typeof(IHttpActionResult))]
         public async Task<IHttpActionResult> Put(int id, T entity)
         {
             if (!ModelState.IsValid)
@@ -137,7 +135,7 @@ namespace SampleArch.WebApi.Controllers.Base
         /// <returns>
         /// {T}
         /// </returns>
-        [ResponseType(typeof(Task<IHttpActionResult>))]
+        [ResponseType(typeof(IHttpActionResult))]
         public async Task<IHttpActionResult> Post(T entity)
         {
             if (!ModelState.IsValid)
@@ -160,7 +158,7 @@ namespace SampleArch.WebApi.Controllers.Base
         /// <returns>
         /// {T}
         /// </returns>
-        [ResponseType(typeof(Task<IHttpActionResult>))]
+        [ResponseType(typeof(IHttpActionResult))]
         public async Task<IHttpActionResult> Delete(int id)
         {
             var entity = await _service.GetByIdAsync(id, _cancellationToken).ConfigureAwait(true); ;

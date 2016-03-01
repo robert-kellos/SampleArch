@@ -14,6 +14,11 @@ The Designer Code for this migration file includes a snapshot of your current Co
 This snapshot is used to calculate the changes to your model when you scaffold the next migration. 
 If you make additional changes to your model that you want to include in this migration, then you can re-scaffold it by running 'Add-Migration BNC' again.
 
+
+Update-Database -TargetMigration $InitialDatabase
+--> to re-scaffold 'BNC'
+
+
 To Update Database --
 
 update-database -verbose

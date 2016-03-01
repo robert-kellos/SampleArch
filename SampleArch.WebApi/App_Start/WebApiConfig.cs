@@ -21,20 +21,8 @@ namespace SampleArch.WebApi
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
-
-            //// Web API routes
-            //config.MapHttpAttributeRoutes();
-
-            //config.Routes.MapHttpRoute(
-            //    name: "DefaultApi",
-            //    routeTemplate: "api/{controller}/{id}",
-            //    defaults: new { id = RouteParameter.Optional }
-            //);
-
-            // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
-            //config.SuppressDefaultHostAuthentication();
+            config.SuppressDefaultHostAuthentication();
             //config.Filters.Add(new HostAuthenticationFilter(OAuth...));
 
             // Web API routes
@@ -59,13 +47,15 @@ namespace SampleArch.WebApi
             //builder.RegisterType<DatabaseFactory>().As<IDatabaseFactory>().InstancePerRequest();
             //builder.RegisterType<RulesProcessor>().As<IRulesProcessor>().InstancePerRequest();
 
-            //  builder.RegisterAssemblyTypes(typeof([TopLevelRequiredObject; ex: ServerRepository]).Assembly)
-            //  .Where(t => t.Name.EndsWith("Repository"))
-            //  .AsImplementedInterfaces().InstancePerRequest();
+            builder.RegisterType<FluentValidation.Validators.AbstractComparisonValidator>().As<FluentValidation.Validators.IComparisonValidator>().InstancePerRequest();
 
-            //  builder.RegisterAssemblyTypes(typeof([TopLevelRequiredObject; ex: ServerService]).Assembly)
-            //.Where(t => t.Name.EndsWith("Service"))
-            //.AsImplementedInterfaces().InstancePerRequest();
+            builder.RegisterAssemblyTypes(typeof(GenericRepository<>).Assembly)
+              .Where(t => t.Name.EndsWith("Repository"))
+              .AsImplementedInterfaces().InstancePerRequest();
+
+            builder.RegisterAssemblyTypes(typeof(EntityService<>).Assembly)
+            .Where(t => t.Name.EndsWith("Service"))
+            .AsImplementedInterfaces().InstancePerRequest();
 
             IContainer container = builder.Build();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);

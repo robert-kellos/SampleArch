@@ -3,6 +3,7 @@ using WebActivatorEx;
 using SampleArch.WebApi;
 using Swashbuckle.Application;
 using System;
+using System.Linq;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -172,7 +173,7 @@ namespace SampleArch.WebApi
                         // with the same path (sans query string) and HTTP method. You can workaround this by providing a
                         // custom strategy to pick a winner or merge the descriptions for the purposes of the Swagger docs 
                         //
-                        //c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+                        c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
 
                         // Wrap the default SwaggerGenerator with additional behavior (e.g. caching) or provide an
                         // alternative implementation for ISwaggerProvider with the CustomProvider option.
@@ -193,13 +194,13 @@ namespace SampleArch.WebApi
                         //
                         //c.InjectJavaScript(thisAssembly, "Swashbuckle.Dummy.SwaggerExtensions.testScript1.js");
 
-                        // The swagger-ui renders boolean data types as a dropdown. By default, it provides "true" and "false"
+                        // The swagger-ui renders boolean data types as a drop-down. By default, it provides "true" and "false"
                         // strings as the possible choices. You can use this option to change these to something else,
                         // for example 0 and 1.
                         //
                         //c.BooleanValues(new[] { "0", "1" });
 
-                        // By default, swagger-ui will validate specs against swagger.io's online validator and display the result
+                        // By default, swagger-ui will validate specs against swagger.io's on-line validator and display the result
                         // in a badge at the bottom of the page. Use these options to set a different validator URL or to disable the
                         // feature entirely.
                         //c.SetValidatorUrl("http://localhost/validator");

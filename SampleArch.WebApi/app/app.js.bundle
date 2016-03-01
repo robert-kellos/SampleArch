@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bundle minify="true" runOnBuild="true" output="app.js">
+  <!--The order of the <file> elements determines the order of them when bundled.-->
+  <file>/app/interceptors.js</file>
+  <file>/app/services.js</file>
+  <file>/app/resources.js</file>
+  <file>/app/directives.js</file>
+  <file>/app/controllers.js</file>
+  <file>/app/main.js</file>
+</bundle>

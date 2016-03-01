@@ -1,0 +1,22 @@
+﻿[
+  {
+    "outputFile": "app/main.es5.js",
+    "inputFile": "app/main.js"
+  },
+  {
+    "outputFile": "app/controllers.es5.js",
+    "inputFile": "app/controllers.js"
+  },
+  {
+    "outputFile": "app/directives.es5.js",
+    "inputFile": "app/directives.js"
+  },
+  {
+    "outputFile": "app/services.es5.js",
+    "inputFile": "app/services.js"
+  },
+  {
+    "outputFile": "app/app.es5.js",
+    "inputFile": "app/app.js"
+  }
+]

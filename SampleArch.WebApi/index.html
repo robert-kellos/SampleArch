@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="app" lang="en">
+<head>
+    <title>Sample Arch Angular</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="fragment" content="!"/>
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="Content/bootstrap.css" rel="stylesheet">
+    <link href="Content/style.css" rel="stylesheet">
+
+    <script src="Scripts/modernizr-2.8.3.js"></script>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="Scripts/html5shiv.min.js"></script>
+      <script src="Scripts/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="container body-content">
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-inverse navbar-fixed-top" data-ng-controller="NavCtrl">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a data-busy-indicator class="navbar-brand" href="/swagger">Sample Arch API</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li data-ng-class="getClass('/home')"><a href="#!/home"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                        <li data-ng-class="getClass('/signoff')"><a href="#!/signoff"><i class="glyphicon glyphicon-tasks"></i> SignOff</a></li>
+                        <li data-ng-class="getClass('/epanel')"><a href="#!/ePanel"><i class="glyphicon glyphicon-tasks"></i> Panel</a></li>
+                        <li data-ng-class="getClass('/about')"><a href="#!/about"><i class="glyphicon glyphicon-question-sign"></i> About</a></li>
+                    </ul>
+                    <!--<ul class="nav navbar-nav navbar-right">
+                        <li data-ng-if="userName && userName.length" data-ng-cloak>
+                            <span class="navbar-text nofloat">Hello, <span data-ng-bind="userName"></span></span>
+                        </li>
+                    </ul>-->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li data-ng-class="getClass('/logs')"><a href="#!/logs"><i class="glyphicon glyphicon-list"></i> Logs</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+        <div>
+            
+        </div>
+        <div data-ng-view class="reveal-animation"></div>
+
+        <hr />
+        <footer>
+            <p>&copy; <span data-ng-bind="today.getFullYear()"></span> - Sample Arch Angular</p>
+        </footer>
+
+        <!-- dialog -->
+        <div class="modal fade" ><!--data-auth-dialog data-ng-controller="LoginCtrl"-->
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Login</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="inputUser" class="col-lg-2 control-label">User</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="inputUser" placeholder="User" data-ng-model="userName">
+                                </div>
+                            
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-ng-click="cancel()">Cancel</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+    </div>
+
+<!-- Scripts -->
+    <script src="Scripts/vendors.min.js"></script>
+
+    <!--SignalR hubs proxy-->
+    <script src="signalr/hubs"></script>
+
+<!-- App -->
+    
+    <!--
+        Production bundle
+        <script src="app/app.min.js"></script>
+    -->
+
+
+    <script src="app/interceptors.js"></script>
+    <script src="app/services.js"></script>
+    <script src="app/resources.js"></script>
+    <script src="app/directives.js"></script>
+    <script src="app/controllers.js"></script>
+
+    <script src="app/main.js"></script>
+</body>
+</html>

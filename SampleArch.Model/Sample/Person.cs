@@ -26,7 +26,7 @@ namespace SampleArch.Model
         public string State { get; set; }
 
         [Display(Name="Country")]
-        public int CountryId { get; set;  }
+        public long CountryId { get; set;  }
 
         //!!!!!!!!
         //This becomes required for valid data-binding
