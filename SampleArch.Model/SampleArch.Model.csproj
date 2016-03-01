@@ -80,7 +80,7 @@
     <Compile Include="Common\IAuditableEntity.cs" />
     <Compile Include="Common\ICustomizeSchema.cs" />
     <Compile Include="Common\IEntity.cs" />
-    <Compile Include="Country.cs" />
+    <Compile Include="Sample\Country.cs" />
     <Compile Include="BNC\DecoderModel.cs" />
     <Compile Include="BNC\Location.cs" />
     <Compile Include="Migrations\201603011359267_BNC.cs" />
@@ -90,7 +90,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="BNC\OperationGroup.cs" />
     <Compile Include="BNC\Partition.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="Sample\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BNC\RatingRegion.cs" />
     <Compile Include="BNC\Region.cs" />

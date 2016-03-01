@@ -94,10 +94,10 @@
     <Compile Include="Common\EntityService.cs" />
     <Compile Include="Common\IEntityService.cs" />
     <Compile Include="Common\IService.cs" />
-    <Compile Include="PersonService.cs" />
-    <Compile Include="IPersonService.cs" />
-    <Compile Include="CountryService.cs" />
-    <Compile Include="ICountryService.cs" />
+    <Compile Include="Sample\PersonService.cs" />
+    <Compile Include="Sample\IPersonService.cs" />
+    <Compile Include="Sample\CountryService.cs" />
+    <Compile Include="Sample\ICountryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

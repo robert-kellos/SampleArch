@@ -274,8 +274,8 @@
     <Compile Include="Controllers\BNC\DecoderModelController.cs" />
     <Compile Include="Controllers\BNC\AffiliateController.cs" />
     <Compile Include="Controllers\BNC\AboutController.cs" />
-    <Compile Include="Controllers\CountryController.cs" />
-    <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Controllers\Sample\CountryController.cs" />
+    <Compile Include="Controllers\Sample\PersonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

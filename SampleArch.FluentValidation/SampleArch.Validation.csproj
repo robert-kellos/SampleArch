@@ -60,8 +60,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Validators\PersonValidator.cs" />
-    <Compile Include="Validators\CountryValidator.cs" />
+    <Compile Include="Validators\Sample\PersonValidator.cs" />
+    <Compile Include="Validators\Sample\CountryValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
